@@ -6,7 +6,7 @@ import {ComponentDesignerLayout} from "../layouts/ComponentDesignerLayout";
 
 export interface  ILayoutContentProps extends IComponentProps {
     layout: Function;
-
+    layoutProps: IComponentProps;
 }
 
 export class LayoutContent extends Component<ILayoutContentProps,any> {
@@ -16,14 +16,14 @@ export class LayoutContent extends Component<ILayoutContentProps,any> {
         this.context = context;
     }
 
-    //BasePage.prototype.render = function () {
-    //return (React.createElement(ComponentDesignerLayout_1.ComponentDesignerLayout, null, "this BasePage"));
-
     render() {
 
-        let props={elementsFromPageContent:React.Children.toArray(this.props.children)};
+        let layoutProps = {
+            elementsFromLayoutContent: React.Children.toArray(this.props.children),
+            ...this.props.layoutProps
+        };
 
-        return (React.createElement(ComponentDesignerLayout, props,  null));  // todo заменить ComponentDesignerLayout
+        return (React.createElement(this.props.layout as any, layoutProps, null));  // todo заменить ComponentDesignerLayout
         // return (
         //     <ComponentDesignerLayout>this BasePage</ComponentDesignerLayout>
         // )

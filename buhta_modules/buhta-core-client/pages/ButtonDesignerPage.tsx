@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import {LayoutContent} from "../components/LayoutContent";
-import {ComponentDesignerLayout} from "../layouts/ComponentDesignerLayout";
+import {ComponentDesignerLayout, IComponentDesignerLayoutProps} from "../layouts/ComponentDesignerLayout";
 import {Div} from "../components/Div";
 import {Span} from "../components/Span";
 import {Component, IComponentProps} from "../components/Component";
@@ -29,8 +29,13 @@ export class ButtonDesignerPage extends Component<IButtonDesignerPageProps,any> 
     // };
 
     render() {
+
+        let layoutProps:IComponentDesignerLayoutProps={
+            bindObject:this.props.button
+        }
+
         return (
-            <LayoutContent layout={ComponentDesignerLayout}>
+            <LayoutContent layout={ComponentDesignerLayout} layoutProps={layoutProps}>
                 <Div layoutArea="title">это вставка в Title</Div>
                 <Div layoutArea="main">это вставка в Main1 {this.props.button.text}</Div>
                 <Input layoutArea="main" bindObj={this.props.button} bindProp="text"/>

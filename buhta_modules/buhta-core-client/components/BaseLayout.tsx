@@ -6,7 +6,7 @@ import {IComponentProps, Component} from "./Component";
 
 export interface  IBaseLayoutProps extends IComponentProps {
     areas?: string[];
-    elementsFromPageContent:JSX.Element[];
+    elementsFromLayoutContent?:JSX.Element[];
 }
 
 export class BaseLayout<P extends IBaseLayoutProps,S> extends Component<P,S> {
@@ -22,12 +22,12 @@ export class BaseLayout<P extends IBaseLayoutProps,S> extends Component<P,S> {
     };
 
     static childContextTypes = {
-        elementsFromPageContent: React.PropTypes.array
+        elementsFromLayoutContent: React.PropTypes.array
     };
 
 
     getChildContext() {
-        return {elementsFromPageContent: this.props.elementsFromPageContent};
+        return {elementsFromLayoutContent: this.props.elementsFromLayoutContent};
     };
 
     render():JSX.Element {

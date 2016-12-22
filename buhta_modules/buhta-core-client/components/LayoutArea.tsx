@@ -16,12 +16,12 @@ export class LayoutArea extends Component<ILayoutAreaProps,any> {
     }
 
     static contextTypes = {
-        elementsFromPageContent: React.PropTypes.array
+        elementsFromLayoutContent: React.PropTypes.array
     };
 
     render() {
 
-        let elements = this.context.elementsFromPageContent as JSX.Element[];
+        let elements = this.context.elementsFromLayoutContent as JSX.Element[];
 
         elements = elements.filter((item: JSX.Element) => item.props.layoutArea === this.props.id);
 
