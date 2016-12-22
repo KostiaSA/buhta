@@ -29,6 +29,7 @@ export class ButtonDesignerPage extends Component<IButtonDesignerPageProps,any> 
     // };
 
     render() {
+      //  console.log("ButtonDesignerPage",this.props.button);
 
         let layoutProps:IComponentDesignerLayoutProps={
             bindObject:this.props.button

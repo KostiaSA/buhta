@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom";
 import {BaseLayout, IBaseLayoutProps} from "../components/BaseLayout";
 import {LayoutArea} from "../components/LayoutArea";
 import * as EJSON from "ejson";
+import {observer} from "mobx-react";
 
 //export const ButtonComponent_Id = "t3m0id3lb5zdqbrj83au";
 
@@ -10,6 +11,7 @@ export interface  IComponentDesignerLayoutProps extends IBaseLayoutProps {
     bindObject: any;
 }
 
+@observer
 export class ComponentDesignerLayout<P extends IComponentDesignerLayoutProps,S> extends BaseLayout<P,S> {
     constructor(props: any, context: any) {
         super(props, context);
@@ -20,18 +22,25 @@ export class ComponentDesignerLayout<P extends IComponentDesignerLayoutProps,S> 
 
     componentDidMount() {
         this.savedBindObject = EJSON.clone(this.props.bindObject);
-        debugger;
     };
+
+    // componentWillReceiveProps(nextProps: P) {
+    //     console.log("componentWillReceiveProps", nextProps.bindObject.text);
+    //     this.savedBindObject = EJSON.clone(nextProps.bindObject);
+    // }
 
     savedBindObject: any;
 
     handleCancel = (): void => {
-        debugger;
-        for (var propName in this.savedBindObject)
-            this.props.bindObject[propName] = this.savedBindObject[propName];
+        for (var propName in this.savedBindObject) {
+            if (!EJSON.equals(this.props.bindObject[propName], this.savedBindObject[propName]))
+                this.props.bindObject[propName] = this.savedBindObject[propName];
+        }
     }
 
     render() {
+
+        // console.log("ComponentDesignerLayout",this.props.bindObject);
 
         return (
             <div>

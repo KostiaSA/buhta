@@ -12,8 +12,10 @@ import {IMongoFindRequestAnswer} from "buhta-core-api/services/MongoFindRequest"
 import {ButtonDesignerPage} from "./pages/ButtonDesignerPage";
 import {IButtonProps} from "./components/Button";
 import {observable} from "mobx";
+import {observer} from "mobx-react";
 
 
+@observer
 export class App extends React.Component<any,any> {
 
 
@@ -64,6 +66,8 @@ export class App extends React.Component<any,any> {
             });
         }
 
+        this.but={text:"новая жопа!"};
+
     };
 
     handleClickMongo1 = () => {
@@ -100,6 +104,7 @@ export class App extends React.Component<any,any> {
                 <br/>
                 <button onClick={this.handleClickMongo1}>get schema objects</button>
                 <br/>
+                <div>text:{this.but.text}</div>
                 <ButtonDesignerPage button={this.but}>
 
                 </ButtonDesignerPage>
