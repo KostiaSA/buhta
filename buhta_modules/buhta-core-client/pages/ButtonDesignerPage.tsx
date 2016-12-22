@@ -1,10 +1,11 @@
 
 import * as React from "react";
-import {PageContent} from "../layouts/PageContent";
+import {PageContent} from "../components/PageContent";
 import {ComponentDesignerLayout} from "../layouts/ComponentDesignerLayout";
 import {Div} from "../components/Div";
 import {Span} from "../components/Span";
-import {Component, IComponentProps} from "../components/component/component";
+import {Component, IComponentProps} from "../components/Component";
+import {Button} from "../components/Button";
 
 export interface  IButtonDesignerPageProps extends IComponentProps {
     button: Object;
@@ -29,6 +30,7 @@ export class ButtonDesignerPage extends Component<IButtonDesignerPageProps,any> 
                 <Div area="title">это вставка в Title</Div>
                 <Div area="main">это вставка в Main</Div>
                 <Span area="footer-left-buttons">это вставка в footer-left-buttons</Span>
+                <Button area="main">это вставка Button в Main</Button>
             </PageContent>
         )
     };

@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {IComponentProps, Component} from "../components/component/component";
+import {IComponentProps, Component} from "./Component";
 
 //export const ButtonComponent_Id = "t3m0id3lb5zdqbrj83au";
 

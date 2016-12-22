@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Socket = SocketIOClient.Socket;
 import {callServer} from "./callServer";
-import {Component} from "./components/component/component";
+import {Component} from "./components/Component";
 import {IPingRequest} from "buhta-core-api/services/PingRequest";
 import {PingRequest_Id} from "buhta-core-api/services/PingRequest";
 import {IPingRequestAnswer} from "buhta-core-api/services/PingRequest";

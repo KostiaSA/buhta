@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 
-import {IPersistentObject} from "../../../buhta-core-api/schema/IPersistentObject";
+import {IPersistentObject} from "../../buhta-core-api/schema/IPersistentObject";
 
 export interface  IComponentProps {
     area?: string;

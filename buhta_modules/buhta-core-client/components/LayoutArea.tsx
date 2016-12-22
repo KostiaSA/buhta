@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {Component, IComponentProps} from "../components/component/component";
+import {Component, IComponentProps} from "./Component";
 
 
 export interface  ILayoutAreaProps extends IComponentProps {

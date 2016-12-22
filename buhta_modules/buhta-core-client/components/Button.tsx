@@ -1,12 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {Component} from "../component/component";
-import {IComponentProps} from "../component/component";
+import {Component} from "./Component";
+import {IComponentProps} from "./Component";
 
 //export const ButtonComponent_Id = "t3m0id3lb5zdqbrj83au";
 
 export interface  IButtonProps extends IComponentProps {
-    text: string;
+    text?: string;
 }
 
 export class Button extends Component<IButtonProps,any> {

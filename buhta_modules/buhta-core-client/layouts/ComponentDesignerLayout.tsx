@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {BaseLayout, IBaseLayoutProps} from "./BaseLayout";
-import {LayoutArea} from "./LayoutArea";
+import {BaseLayout, IBaseLayoutProps} from "../components/BaseLayout";
+import {LayoutArea} from "../components/LayoutArea";
 
 //export const ButtonComponent_Id = "t3m0id3lb5zdqbrj83au";
 
