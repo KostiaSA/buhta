@@ -4,12 +4,12 @@ import {Component, IComponentProps} from "./Component";
 import {ComponentDesignerLayout} from "../layouts/ComponentDesignerLayout";
 
 
-export interface  IPageContentProps extends IComponentProps {
+export interface  ILayoutContentProps extends IComponentProps {
     layout: Function;
 
 }
 
-export class PageContent extends Component<IPageContentProps,any> {
+export class LayoutContent extends Component<ILayoutContentProps,any> {
     constructor(props: any, context: any) {
         super(props, context);
         this.props = props;

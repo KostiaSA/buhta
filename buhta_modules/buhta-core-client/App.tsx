@@ -10,6 +10,8 @@ import {IMongoFindRequest} from "buhta-core-api/services/MongoFindRequest";
 import {MongoFindRequest_Id} from "buhta-core-api/services/MongoFindRequest";
 import {IMongoFindRequestAnswer} from "buhta-core-api/services/MongoFindRequest";
 import {ButtonDesignerPage} from "./pages/ButtonDesignerPage";
+import {IButtonProps} from "./components/Button";
+import {observable} from "mobx";
 
 
 export class App extends React.Component<any,any> {
@@ -86,9 +88,10 @@ export class App extends React.Component<any,any> {
 
     };
 
-    render(): any {
 
-        let but={};
+    @observable but:IButtonProps={text:"жми сюда"};
+
+    render(): any {
 
         return (
             <div>
@@ -97,7 +100,7 @@ export class App extends React.Component<any,any> {
                 <br/>
                 <button onClick={this.handleClickMongo1}>get schema objects</button>
                 <br/>
-                <ButtonDesignerPage button={but}>
+                <ButtonDesignerPage button={this.but}>
 
                 </ButtonDesignerPage>
 

@@ -23,7 +23,7 @@ export class LayoutArea extends Component<ILayoutAreaProps,any> {
 
         let elements = this.context.elementsFromPageContent as JSX.Element[];
 
-        elements = elements.filter((item: JSX.Element) => item.props.area === this.props.id);
+        elements = elements.filter((item: JSX.Element) => item.props.layoutArea === this.props.id);
 
         return (
             <span>

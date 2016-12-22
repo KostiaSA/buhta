@@ -5,7 +5,7 @@ import * as ReactDOM from "react-dom";
 import {IPersistentObject} from "../../buhta-core-api/schema/IPersistentObject";
 
 export interface  IComponentProps {
-    area?: string;
+    layoutArea?: string;
 }
 
 export class Component<P extends IComponentProps,S> extends React.Component<P,S> {

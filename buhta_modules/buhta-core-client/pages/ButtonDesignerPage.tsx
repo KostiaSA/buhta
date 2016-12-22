@@ -1,16 +1,20 @@
 
 import * as React from "react";
-import {PageContent} from "../components/PageContent";
+import {LayoutContent} from "../components/LayoutContent";
 import {ComponentDesignerLayout} from "../layouts/ComponentDesignerLayout";
 import {Div} from "../components/Div";
 import {Span} from "../components/Span";
 import {Component, IComponentProps} from "../components/Component";
-import {Button} from "../components/Button";
+import {Button, IButtonProps} from "../components/Button";
+import {getRandomString} from "../utils/getRandomString";
+import {Input} from "../inputs/Input";
+import {observer} from "mobx-react";
 
 export interface  IButtonDesignerPageProps extends IComponentProps {
-    button: Object;
+    button: IButtonProps;
 }
 
+@observer
 export class ButtonDesignerPage extends Component<IButtonDesignerPageProps,any> {
 
     constructor(props: any, context: any) {
@@ -26,12 +30,15 @@ export class ButtonDesignerPage extends Component<IButtonDesignerPageProps,any> 
 
     render() {
         return (
-            <PageContent layout={ComponentDesignerLayout}>
-                <Div area="title">это вставка в Title</Div>
-                <Div area="main">это вставка в Main</Div>
-                <Span area="footer-left-buttons">это вставка в footer-left-buttons</Span>
-                <Button area="main">это вставка Button в Main</Button>
-            </PageContent>
+            <LayoutContent layout={ComponentDesignerLayout}>
+                <Div layoutArea="title">это вставка в Title</Div>
+                <Div layoutArea="main">это вставка в Main1 {this.props.button.text}</Div>
+                <Input layoutArea="main" bindObj={this.props.button} bindProp="text"/>
+                <Input layoutArea="main" bindObj={this.props.button} bindProp="text"/>
+                <Div layoutArea="main">это вставка в Main3 {getRandomString()}</Div>
+                <Button layoutArea="main">это вставка Button в Main</Button>
+                <Span layoutArea="footer-left-buttons">это вставка в footer-left-buttons</Span>
+            </LayoutContent>
         )
     };
 

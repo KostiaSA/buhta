@@ -45,12 +45,12 @@ export function login(req: ILoginRequest): Promise<ILoginRequestAnswer> {
 //         description: "Login к серверу",
 //         props: [
 //             {
-//                 propName: "login",
+//                 bindProp: "login",
 //                 propTypes: [String_Type_Id],
 //                 description: "логин"
 //             },
 //             {
-//                 propName: "пароль",
+//                 bindProp: "пароль",
 //                 propTypes: [String_Type_Id],
 //                 description: "пароль"
 //             }

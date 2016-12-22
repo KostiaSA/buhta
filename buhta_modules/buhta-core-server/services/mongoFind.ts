@@ -50,35 +50,35 @@ export async function mongoFind(req: IMongoFindRequest): Promise<IMongoFindReque
 //         description: "MongoFind",
 //         props: [
 //             {
-//                 propName: "collection",
+//                 bindProp: "collection",
 //                 propTypes: [String_Type_Id],
 //                 description: "collection"
 //             },
 //             {
-//                 propName: "query",
+//                 bindProp: "query",
 //                 propTypes: [Object_Type_Id],
 //                 description: "запрос/фильтр"
 //             },
 //             {
-//                 propName: "fields",
+//                 bindProp: "fields",
 //                 propTypes: [Object_Type_Id],
 //                 isOptional: true,
 //                 description: "состав возвращаемых полей"
 //             },
 //             {
-//                 propName: "skip",
+//                 bindProp: "skip",
 //                 propTypes: [Number_Type_Id],
 //                 isOptional: true,
 //                 description: "skip"
 //             },
 //             {
-//                 propName: "limit",
+//                 bindProp: "limit",
 //                 propTypes: [Number_Type_Id],
 //                 isOptional: true,
 //                 description: "limit"
 //             },
 //             {
-//                 propName: "timeout",
+//                 bindProp: "timeout",
 //                 propTypes: [Number_Type_Id],
 //                 isOptional: true,
 //                 description: "timeout"
@@ -100,7 +100,7 @@ export async function mongoFind(req: IMongoFindRequest): Promise<IMongoFindReque
 //         description: "ответ MongoFind от сервера: массив объектов",
 //         props: [
 //             {
-//                 propName: "objects",
+//                 bindProp: "objects",
 //                 propTypes: [Array_Type_Id],
 //                 description: "результат запроса: массив объектов"
 //             }

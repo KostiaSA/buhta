@@ -57,7 +57,7 @@ export function ping(req: IPingRequest): Promise<IPingRequestAnswer> {
 //         description: "ответ ping от сервера",
 //         props: [
 //             {
-//                 propName: "serverTime",
+//                 bindProp: "serverTime",
 //                 propTypes: [Date_Type_Id],
 //                 description: "время серера"
 //             }
