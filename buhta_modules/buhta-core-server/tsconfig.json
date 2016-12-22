@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": "../../buhta_modules",
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es6",
+   // "outDir": "dist",
+    "declaration": false,
+    "module": "commonjs",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    //    "reactNamespace": "__React"
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "skipLibCheck": true
+  },
+  "exclude": [
+    //"node_modules",
+    "dist"
+    //".js"
+    //"**/*x.d.ts"
+  ]
+}

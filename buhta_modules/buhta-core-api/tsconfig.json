@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+   // "baseUrl": "../node_modules",
+//    "rootDirs": [
+//      "../api"
+//
+//    ],
+   // "baseUrl": "../node_modules1",
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    //"outDir": "dist",
+    "declaration": true,
+    "module": "commonjs",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    //    "reactNamespace": "__React"
+    "lib": [
+      "es5",
+      "dom"
+    ],
+    "skipLibCheck": true
+  },
+  "exclude": [
+    //"node_modules",
+    "dist"
+    //".js"
+    //"**/*x.d.ts"
+  ]
+}

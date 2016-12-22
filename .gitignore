@@ -1,0 +1,13 @@
+.idea
+node_modules
+*.js
+*.map
+*.rar
+*.zip
+*.apk
+app_bundle.js
+!webpack.config.js
+!server.js
+!www/js/*.js
+*.pdf
+
