@@ -4,6 +4,9 @@ import {BaseLayout, IBaseLayoutProps} from "../components/BaseLayout";
 import {LayoutArea} from "../components/LayoutArea";
 import * as EJSON from "ejson";
 import {observer} from "mobx-react";
+import {Container} from "../components/Container";
+import {Row} from "../components/Row";
+import {Column} from "../components/Column";
 
 //export const ButtonComponent_Id = "t3m0id3lb5zdqbrj83au";
 
@@ -43,20 +46,28 @@ export class ComponentDesignerLayout<P extends IComponentDesignerLayoutProps,S> 
         // console.log("ComponentDesignerLayout",this.props.bindObject);
 
         return (
-            <div>
-                <h1>Это дизайнер компонента</h1>
-                <LayoutArea id="title"></LayoutArea>
-                <LayoutArea id="main"></LayoutArea>
-                <div>
-                    <LayoutArea id="footer-left-buttons">
-                    </LayoutArea>
-                    <button>сохранить</button>
-                    <button onClick={this.handleCancel}>отмена</button>
-                    <LayoutArea id="footer-right-buttons">
-                    </LayoutArea>
-
-                </div>
-            </div>
+            <Container>
+                <Row>
+                    <Column width="1/1">
+                        <h1>Это дизайнер компонента</h1>
+                    </Column>
+                </Row>
+                <Row>
+                    <Column width="3/4">
+                        <LayoutArea id="title"></LayoutArea>
+                        <LayoutArea id="main"></LayoutArea>
+                    </Column>
+                    <Column width="1/4">
+                        <LayoutArea id="footer-left-buttons">
+                        </LayoutArea>
+                        <br/>
+                        <button>сохранить</button>
+                        <button onClick={this.handleCancel}>отмена</button>
+                        <LayoutArea id="footer-right-buttons">
+                        </LayoutArea>
+                    </Column>
+                </Row>
+            </Container>
         );
     }
 
