@@ -14,6 +14,7 @@ import {IButtonProps} from "./components/Button";
 import {observable} from "mobx";
 import {observer} from "mobx-react";
 
+let Sortable = (window as any)["Sortable"];
 
 @observer
 export class App extends React.Component<any,any> {
@@ -28,6 +29,18 @@ export class App extends React.Component<any,any> {
     socket: Socket;
 
     componentDidMount() {
+
+
+        var sortable = Sortable.create($('#sortable')[0],{group:"aaa",draggable: ".title"});
+        var sortable2 = Sortable.create($('#sortable2')[0],{group:"aaa"});
+
+
+        ($('#nestable') as any).nestable({
+            group: 0
+        });
+        ($('#nestable2') as any).nestable({
+            group: 0
+        });
         // window.addEventListener("resize", () => {
         //     appState.winWidth = $(window).width();
         //     appState.winHeight = $(window).height();
@@ -66,7 +79,7 @@ export class App extends React.Component<any,any> {
             });
         }
 
-        this.but={text:"новая жопа!"};
+        this.but = {text: "новая жопа!"};
 
     };
 
@@ -93,7 +106,7 @@ export class App extends React.Component<any,any> {
     };
 
 
-    @observable but:IButtonProps={text:"жми сюда"};
+    @observable but: IButtonProps = {text: "жми сюда"};
 
     render(): any {
 
@@ -109,6 +122,72 @@ export class App extends React.Component<any,any> {
 
                 </ButtonDesignerPage>
 
+                <ul id="sortable">
+                    <li className="title"> item 1</li>
+                    <span className="title">span item 2</span>
+                    <li className="title">item 3</li>
+                </ul>
+
+                <ul id="sortable2">
+                    <li>item 11</li>
+                    <li>item 22</li>
+                    <li>item 33</li>
+                    <li>item 44</li>
+                </ul>
+
+
+                <div className="dd" id="nestable">
+                    <ol className="dd-list">
+                        <li className="dd-item" data-id="1">
+                            <div className="dd-handle">Item 1</div>
+                        </li>
+                        <li className="dd-item" data-id="2">
+                            <div className="dd-handle">Item 2</div>
+                            <ol className="dd-list">
+                                <li className="dd-item" data-id="3">
+                                    <div className="dd-handle">Item 3</div>
+                                </li>
+                                <li className="dd-item" data-id="4">
+                                    <div className="dd-handle">Item 4</div>
+                                </li>
+                                <li className="dd-item" data-id="5">
+                                    <div className="dd-handle">Item 5</div>
+                                    <ol className="dd-list">
+                                        <li className="dd-item" data-id="6">
+                                            <div className="dd-handle">Item 6</div>
+                                        </li>
+                                        <li className="dd-item" data-id="7">
+                                            <div style={{height:50, width:50}} className="dd-handle">
+                                                item7
+                                            </div>
+                                            <div className="dd-nodrag" onClick={this.handleClick}>
+                                                /////////////////////
+
+                                                /////////////////////
+
+                                            </div>
+                                        </li>
+                                        <li className="dd-item" data-id="8">
+                                            <div className="dd-handle">Item 8</div>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li className="dd-item" data-id="9">
+                                    <div className="dd-handle">Item 9</div>
+                                </li>
+                                <li className="dd-item" data-id="10">
+                                    <div className="dd-handle">Item 10</div>
+                                </li>
+                            </ol>
+                        </li>
+                        <li className="dd-item" data-id="11">
+                            <div className="dd-handle">Item 11</div>
+                        </li>
+                        <li className="dd-item" data-id="12">
+                            <div className="dd-handle">Item 12</div>
+                        </li>
+                    </ol>
+                </div>
             </div>
         );
     }

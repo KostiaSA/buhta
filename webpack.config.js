@@ -36,6 +36,10 @@ module.exports = {
                 copydir.sync("buhta_modules/"+buhtaModule, "node_modules/"+buhtaModule, function (stat, filepath, filename) {
                     if (stat === "file") {
                         if (filepath.endsWith(".js")) return true;
+                        if (filepath.endsWith(".css")) return true;
+                        if (filepath.endsWith(".jpg")) return true;
+                        if (filepath.endsWith(".jpeg")) return true;
+                        if (filepath.endsWith(".png")) return true;
                         //if (filepath.endsWith(".d.ts")) return true;
                         return false;
                     }

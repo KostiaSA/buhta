@@ -23,8 +23,15 @@ export async function initModule(): Promise<void> {
 
             registerCssFile("node_modules/bootstrap/dist/css/bootstrap.css");
             registerCssFile("node_modules/font-awesome/css/font-awesome.min.css");
+            registerCssFile("node_modules/buhta-core-server/www/css/nestable.css");
+            registerCssFile("node_modules/buhta-core-server/www/css/buhta.css");
+
 
             registerJavaScriptFile("node_modules/jquery/dist/jquery.min.js");
+            registerJavaScriptFile("node_modules/nestable/jquery.nestable.js");
+            registerJavaScriptFile("node_modules/sortablejs/sortable.min.js");
+
+
             registerJavaScriptFile("node_modules/bootstrap/dist/js/bootstrap.min.js");
             registerJavaScriptFile("node_modules/react/dist/react.js");
             registerJavaScriptFile("node_modules/react-dom/dist/react-dom.js");
