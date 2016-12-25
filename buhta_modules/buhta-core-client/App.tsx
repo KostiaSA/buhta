@@ -111,7 +111,7 @@ export class App extends React.Component<any,any> {
     render(): any {
 
         return (
-            <div>
+            <div style={{marginLeft:50}}>
                 Buhta client!
                 <button onClick={this.handleClick}>emit</button>
                 <br/>
@@ -122,11 +122,11 @@ export class App extends React.Component<any,any> {
 
                 </ButtonDesignerPage>
 
-                <ul id="sortable">
-                    <li className="title"> item 1</li>
-                    <span className="title">span item 2</span>
-                    <li className="title">item 3</li>
-                </ul>
+                <span id="sortable">
+                    <span className="title"> item 1</span>
+                    <span className="title" style={{height:30, width:200, border:"2px solid red"}}>span item 2</span>
+                    <span className="title">item 3</span>
+                </span>
 
                 <ul id="sortable2">
                     <li>item 11</li>
