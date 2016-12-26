@@ -7,7 +7,7 @@ export interface  IDivProps extends IComponentProps {
 
 }
 
-export class Div extends Component<IDivProps,any> {
+export class Div extends Component<IDivProps> {
     constructor(props: any, context: any) {
         super(props, context);
         this.props = props;

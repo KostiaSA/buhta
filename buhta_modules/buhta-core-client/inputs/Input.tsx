@@ -14,7 +14,7 @@ export interface  IInputProps extends IComponentProps {
 }
 
 @observer
-export class Input extends Component<IInputProps,any> {
+export class Input extends Component<IInputProps> {
     constructor(props: any, context: any) {
         super(props, context);
         this.props = props;

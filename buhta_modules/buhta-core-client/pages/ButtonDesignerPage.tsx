@@ -15,7 +15,7 @@ export interface  IButtonDesignerPageProps extends IComponentProps {
 }
 
 @observer
-export class ButtonDesignerPage extends Component<IButtonDesignerPageProps,any> {
+export class ButtonDesignerPage extends Component<IButtonDesignerPageProps> {
 
     constructor(props: any, context: any) {
         super(props, context);

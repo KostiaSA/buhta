@@ -9,7 +9,7 @@ export interface  IButtonProps extends IComponentProps {
     text?: string;
 }
 
-export class Button extends Component<IButtonProps,any> {
+export class Button extends Component<IButtonProps> {
     constructor(props: any, context: any) {
         super(props, context);
         this.props = props;

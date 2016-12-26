@@ -9,7 +9,7 @@ export interface  IBaseLayoutProps extends IComponentProps {
     elementsFromLayoutContent?:JSX.Element[];
 }
 
-export class BaseLayout<P extends IBaseLayoutProps,S> extends Component<P,S> {
+export class BaseLayout<P extends IBaseLayoutProps,S> extends Component<P> {
     constructor(props: any, context: any) {
         super(props, context);
         this.props = props;
@@ -18,8 +18,6 @@ export class BaseLayout<P extends IBaseLayoutProps,S> extends Component<P,S> {
 
     native: Element;
 
-    componentDidMount() {
-    };
 
     static childContextTypes = {
         elementsFromLayoutContent: React.PropTypes.array

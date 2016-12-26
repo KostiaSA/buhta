@@ -1,5 +1,5 @@
 import { IBaseRequest, IBaseRequestAnswer } from "./BaseRequest";
-export declare const PingRequest_Id: string;
+export declare const PingRequest_Id = "a721nw5mqjemr9oxtwl1";
 export interface IPingRequest extends IBaseRequest {
 }
 export interface IPingRequestAnswer extends IBaseRequestAnswer {

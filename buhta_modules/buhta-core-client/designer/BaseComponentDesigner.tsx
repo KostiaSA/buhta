@@ -7,25 +7,27 @@ import {observer} from "mobx-react";
 import {Container} from "../components/Container";
 import {Row} from "../components/Row";
 import {Column} from "../components/Column";
+import {Component} from "../components/Component";
 
 //export const ButtonComponent_Id = "t3m0id3lb5zdqbrj83au";
 
-export interface  IComponentDesignerLayoutProps extends IBaseLayoutProps {
+export interface  IBaseComponentDesignerProps extends IBaseLayoutProps {
     bindObject: any;
 }
 
 @observer
-export class ComponentDesignerLayout<P extends IComponentDesignerLayoutProps,S> extends BaseLayout<P,S> {
+export class BaseComponentDesigner<P extends IBaseComponentDesignerProps> extends Component<P> {
     constructor(props: any, context: any) {
         super(props, context);
         this.props = props;
         this.context = context;
     }
 
+    protected afterMount() {
+        super.afterMount();
+        this.savedBindObject = EJSON.clone(this.props.bindObject);
+    }
 
-    // componentDidMount() {
-    //     this.savedBindObject = EJSON.clone(this.props.bindObject);
-    // };
 
     // componentWillReceiveProps(nextProps: P) {
     //     console.log("componentWillReceiveProps", nextProps.bindObject.text);
@@ -41,30 +43,33 @@ export class ComponentDesignerLayout<P extends IComponentDesignerLayoutProps,S> 
         }
     }
 
+    renderTitle(): JSX.Element[] {
+        return [<h1>Это дизайнер компонента</h1>];
+    }
+
+    renderEditors(): JSX.Element[] {
+        return [<div key="unzf2ac12g">едиторы:</div>];
+    }
+
+
     render() {
 
-        // console.log("ComponentDesignerLayout",this.props.bindObject);
+        // console.log("BaseComponentDesigner",this.props.bindObject);
 
         return (
             <Container>
                 <Row>
                     <Column width="1/1">
-                        <h1>Это дизайнер компонента</h1>
+                        {this.renderTitle()}
                     </Column>
                 </Row>
                 <Row>
                     <Column width="3/4">
-                        <LayoutArea id="title"></LayoutArea>
-                        <LayoutArea id="main"></LayoutArea>
+                        {this.renderEditors()}
                     </Column>
                     <Column width="1/4">
-                        <LayoutArea id="footer-left-buttons">
-                        </LayoutArea>
-                        <br/>
-                        <button>сохранить</button>
-                        <button onClick={this.handleCancel}>отмена</button>
-                        <LayoutArea id="footer-right-buttons">
-                        </LayoutArea>
+                        <button className="btn btn-default">сохранить</button>
+                        <button className="btn btn-default" onClick={this.handleCancel}>отмена</button>
                     </Column>
                 </Row>
             </Container>

@@ -7,7 +7,7 @@ export interface  ISpanProps extends IComponentProps {
 
 }
 
-export class Span extends Component<ISpanProps,any> {
+export class Span extends Component<ISpanProps> {
     constructor(props: any, context: any) {
         super(props, context);
         this.props = props;

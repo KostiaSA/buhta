@@ -1,5 +1,5 @@
 import { IBaseRequest, IBaseRequestAnswer } from "./BaseRequest";
-export declare const MongoFindRequest_Id: string;
+export declare const MongoFindRequest_Id = "ed4joy1td8i2h67rzlo1";
 export interface IMongoFindRequest extends IBaseRequest {
     collection: string;
     query: Object;

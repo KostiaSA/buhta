@@ -12,7 +12,7 @@ export interface  ILayoutContentProps extends IComponentProps {
 }
 
 @observer
-export class LayoutContent extends Component<ILayoutContentProps,any> {
+export class LayoutContent extends Component<ILayoutContentProps> {
     constructor(props: any, context: any) {
         super(props, context);
         this.props = props;
