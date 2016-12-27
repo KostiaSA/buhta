@@ -19,7 +19,7 @@ export class Row extends Component<IRowProps> {
     protected afterMount() {
         super.afterMount();
 
-        var sortable = Sortable.create($(this.nativeRow)[0], {group: "draggableColumns", draggable: ".draggableColumn"});
+        var sortable = Sortable.create($(this.nativeRow)[0], {animation: 200, group: "draggableColumns", draggable: ".draggableColumn"});
         console.log("row afgter moijnty");
     }
 

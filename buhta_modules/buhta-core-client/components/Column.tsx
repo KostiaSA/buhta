@@ -44,15 +44,34 @@ export class Column extends Component<IColumnProps> {
         if (this.props.designMode) {
 
             let style: React.CSSProperties = {};
-            style.border = "1px solid green";
+            style.border = "1px solid silver";
             style.height = 200;
-            // style.marginLeft = 20;
-            //style.marginTop = 20;
-            //style.marginBottom = 20;
+            style.position="relative";
+
+            let toolbarStyle:React.CSSProperties={
+                position: "absolute",
+               top: -1,
+               left: -1
+            };
+
+
+            let toolButtonStyle:React.CSSProperties={
+                borderBottomRightRadius:0,
+                borderBottomLeftRadius:0,
+                borderTopRightRadius:0,
+                borderTopLeftRadius:0,
+                color:"gray"
+            };
 
             return (
                 <div className={className+" draggableColumn"}>
                     <div  style={style}>
+                        <div className="btn-group" style={toolbarStyle}>
+                            <button style={toolButtonStyle}  type="button" className="btn btn-default">{this.props.width}</button>
+                            <button style={toolButtonStyle}  type="button" className="btn btn-default"><i className="fa fa-pencil-square-o"></i></button>
+                            <button style={toolButtonStyle} type="button" className="btn btn-default"><i className="fa fa-files-o"/></button>
+                            <button style={toolButtonStyle} type="button" className="btn btn-default"><i className="fa fa-trash"/></button>
+                        </div>
                         col {this.props.width}
                     </div>
                 </div>

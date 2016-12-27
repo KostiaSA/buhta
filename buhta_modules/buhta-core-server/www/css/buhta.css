@@ -1,3 +1,8 @@
-.sortable-ghost {
-    font-weight: bold;
+.sortable-ghost > div {
+    color: transparent;
+    background: gainsboro;
+}
+
+.sortable-ghost .btn-group {
+    display: none;
 }
