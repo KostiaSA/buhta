@@ -87,6 +87,26 @@ export class App extends React.Component<any,any> {
 
     };
 
+    handleCallProxy = () => {
+        //console.log("emit", this.socket);
+        // this.socket.emit('event777', {my: 'data777'});
+        //
+        // this.socket.emit("a721nw5mqjemr9oxtwl1", {my11: 'data777'});
+
+        let req: IPingRequest = {requestId: PingRequest_Id};
+
+
+        for (let i = 0; i < 1; i++) {
+
+            callServer<IPingRequest,IPingRequestAnswer>(req).then((ans: IPingRequestAnswer) => {
+                console.log("serverTime " + i + ":", ans.serverTime);
+            });
+        }
+
+        this.but = {text: "новая жопа!"};
+
+    };
+
     handleClickMongo1 = () => {
 
         let req: IMongoFindRequest = {
@@ -227,6 +247,7 @@ export class App extends React.Component<any,any> {
             <div style={{marginLeft:50}}>
                 Buhta client 2!
                 <button onClick={this.handleClick}>emit</button>
+                <button onClick={this.handleCallProxy}>call proxy</button>
                 <ButtonDesigner bindObject={this.but}>
 
                 </ButtonDesigner>
