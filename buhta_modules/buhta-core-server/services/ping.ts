@@ -44,14 +44,18 @@ export function ping(req: IPingRequest): Promise<IPingRequestAnswer> {
     //
     // }
 
+    let user="sa";
+    if (new Date().getUTCMilliseconds()%2===0)
+        user="sa1";
+
     let sqlReq: IProxyExecuteSqlRequest = {
         driverName: "mssql",
-        user: "sa",
+        user: user,
         password: "sonyk",
         server: "localhost",
         database: "MAG3305",
 //        sql: [`select top 1 '123' Номер, 'ур"од\\ы' Название from ТМЦ`]
-        sql: [`select top 1  Номер, Название from ТМЦ; waitfor delay '00:00:01'`]
+        sql: [`select top 1  Номер, Название from ТМЦ; waitfor delay '00:00:02'`]
 
     }
 
