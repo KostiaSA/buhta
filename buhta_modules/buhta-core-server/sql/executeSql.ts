@@ -37,7 +37,7 @@ export function executeSql(req: IProxyExecuteSqlRequest): Promise<IProxyExecuteS
 
             let post_options: http.RequestOptions = {
                 host: "localhost",
-                port: 49674,
+                port: 3000,
                 path: "/",
                 method: 'POST',
                 // headers: {

@@ -43,22 +43,47 @@ SELECT
     --WAITFOR DELAY '00:00:00.2'             
             
 `;
-           // sql = `select top 1000 Номер, Название from ТМЦ; select top 2000 Номер, Название from ТМЦ`;
+          //  sql = `update тмц set номер=1 where ключ=-1000; select top 3 Номер, Название from ТМЦ; update тмц set номер=1 where ключ=-1000; select top 4 Название from ТМЦ`;
+            sql = `select top 200 Номер, Название from ТМЦ`;
+
+            let sqla: string[] = [];
+            for (let i = 0; i < 1; i++) {
+              //  sqla.push("update тмц set номер=1 where ключ=-1000;update тмц set номер=1 where ключ=-1000;");
+                sqla.push(sql);
+            }
+
+
             //sql = `select top 10000 * from ТМЦ WHERE гтд is null`;
 
             let sqlReq: IProxyExecuteSqlRequest = {
                 ...msSqlConnection,
-                sql: [sql]
+                sql: sqla
             }
 
             executeSql(sqlReq)
                 .then((res) => {
-
-                    for (let i = 0; i < res.rowsets[0].columns.length; i++)
-                        console.log(res.rowsets[0].columns[i].name, res.rowsets[0].rows[0][i].toString(),typeof res.rowsets[0].rows[0][i]);
-
-                    console.log("msSqlDataTypes: Ok ", res.rowsets[0].rows.length);
-                   // console.log("msSqlDataTypes: Ok ", res.rowsets[0].rows);
+                    console.log("rowsets",res.rowsets.length);
+                    // console.log("rowset0",res.rowsets[0]);
+                    // console.log("rowset1",res.rowsets[1]);
+                    // console.log("rowset2",res.rowsets[2]);
+                    // console.log("rowset3",res.rowsets[3]);
+                    // if (res.rowsets[0]) {
+                    //     for (let i = 0; i < res.rowsets[0].columns.length; i++)
+                    //         console.log(res.rowsets[0].columns[i].name, res.rowsets[0].rows[0][i].toString(), typeof res.rowsets[0].rows[0][i]);
+                    //
+                    //     console.log("msSqlDataTypes: Ok ", res.rowsets[0].rows.length);
+                    // }
+                    // else
+                    //     console.log("msSqlDataTypes: Ok ", "rowset0 no rowsets");
+                    //
+                    // if (res.rowsets[1]) {
+                    //     for (let i = 0; i < res.rowsets[1].columns.length; i++)
+                    //         console.log(res.rowsets[1].columns[i].name, res.rowsets[1].rows[0][i].toString(), typeof res.rowsets[1].rows[0][i]);
+                    //
+                    //     console.log("msSqlDataTypes: Ok ", res.rowsets[1].rows.length);
+                    // }
+                    // else
+                    //     console.log("msSqlDataTypes: Ok ", "rowset1 no rowsets");
                     resolve();
                 })
                 .catch((err) => {

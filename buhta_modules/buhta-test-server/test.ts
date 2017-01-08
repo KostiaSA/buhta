@@ -11,7 +11,7 @@ let tests = [
 
 ]
 
-for (let i=0; i<0; i++)
+for (let i=0; i<1000; i++)
     tests.push(msSqlDataTypes());
 
 Promise.all(tests).then(() => {
